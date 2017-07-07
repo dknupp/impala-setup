@@ -31,5 +31,5 @@ bash 'build_lzo' do
   git checkout #{node['hadoop-lzo']['branch']}
   ant package
   EOH
-  environment "JAVA_HOME" => "/usr/lib/jvm/java-7-oracle-amd64"
+  environment "JAVA_HOME" => node['java']['java_home'] || '/usr/lib/jvm/default-java'
 end
